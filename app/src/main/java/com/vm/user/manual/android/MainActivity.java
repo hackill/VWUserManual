@@ -1,33 +1,40 @@
 package com.vm.user.manual.android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.vm.user.manual.android.guide.CarGuideActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-
-    private int count = 0;
+    Button mButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button = findViewById(R.id.button);
 
+        mButton = findViewById(R.id.button);
 
-
-        button.setOnClickListener(new View.OnClickListener() {
+        mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                count = count + 1;
-                button.setText("点击了" + count + "次");
-
+                gotoGuideActivity();
             }
         });
 
 
+    }
+
+
+    public void gotoGuideActivity() {
+
+        Intent intent = new Intent(MainActivity.this, CarGuideActivity.class);
+        startActivity(intent);
     }
 }
