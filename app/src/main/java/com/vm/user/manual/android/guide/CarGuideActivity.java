@@ -10,7 +10,6 @@ import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class CarGuideActivity extends AppCompatActivity {
@@ -20,11 +19,14 @@ public class CarGuideActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_car_guide);
 
 
-        RecyclerView recyclerView = findViewById(R.id.receiver_view);
+        String carName = getIntent().getStringExtra("KEY_CAR_NAME");
 
+
+        RecyclerView recyclerView = findViewById(R.id.receiver_view);
 
         List<Item> characterList = new ArrayList<>();
 
@@ -46,12 +48,15 @@ public class CarGuideActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
         adapter.setListener(new OnItemClickListener() {
             @Override
             public void onItemClick(Item item) {
-                Toast.makeText(CarGuideActivity.this, "点击了" + item.textview, Toast.LENGTH_SHORT).show();
+                Toast.makeText(CarGuideActivity.this, "点击了" + item.textview + ",carName " + carName, Toast.LENGTH_SHORT).show();
+
+
             }
         });
 

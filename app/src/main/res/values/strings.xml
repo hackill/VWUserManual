@@ -1,3 +1,6 @@
 <resources>
     <string name="app_out_name">电子手册</string>
+
+    <string name="welcome_guide">Welcome to the quick \n operation guidance!</string>
+    <string name="welcome_guide_detail">Let\'s xxxxxxx xx \n  h Information System</string>
 </resources>
