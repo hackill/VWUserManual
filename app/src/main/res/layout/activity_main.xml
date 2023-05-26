@@ -13,18 +13,19 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="140dp"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="60dp"
+        android:layout_marginBottom="25dp"
         android:orientation="horizontal">
 
-        <Button
+        <ImageView
             android:id="@+id/btn_back"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_gravity="center_vertical"
             android:background="@drawable/btn_bg"
-            android:text="退"
+            android:src="@drawable/left_arrow"
             android:textColor="@color/white"
             android:textSize="32dp" />
 
@@ -33,18 +34,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="15dp"
-            android:text="1 \/ 4"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:text="1  /  4"
             android:textColor="@color/white_e0"
             android:textSize="30dp" />
 
-        <Button
+        <ImageView
             android:id="@+id/btn_go"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_gravity="center_vertical"
             android:background="@drawable/btn_bg"
-            android:text="进"
+            android:src="@drawable/right_arrow"
             android:textColor="@color/white"
             android:textSize="32dp" />
 
@@ -54,52 +56,56 @@
     <LinearLayout
         android:id="@+id/ll_operate"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="80dp"
+        android:layout_marginLeft="160dp"
         android:layout_marginRight="30dp"
-        android:orientation="horizontal">
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal"
+        android:visibility="invisible">
 
         <Button
             android:id="@+id/btn_open"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="77dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:background="@drawable/btn_bg"
             android:text="Open user manual"
+            android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="25dp" />
+            android:textSize="@dimen/text_btn_size" />
 
         <Button
             android:id="@+id/btn_ignore"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:background="@drawable/btn_bg"
             android:baselineAligned="false"
             android:text="Don’t show again"
+            android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="25dp" />
+            android:textSize="@dimen/text_btn_size" />
 
         <Button
             android:id="@+id/btn_end"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="40dp"
             android:layout_weight="1"
             android:background="@drawable/btn_bg"
             android:baselineAligned="false"
             android:text="End"
+            android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="25dp" />
+            android:textSize="@dimen/text_btn_size" />
 
 
     </LinearLayout>

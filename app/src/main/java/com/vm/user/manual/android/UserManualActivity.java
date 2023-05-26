@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -26,8 +27,8 @@ public class UserManualActivity extends AppCompatActivity {
     private ViewPager mVp;
 
     private TextView mProgress;
-    private Button backBtn;
-    private Button goBtn;
+    private ImageView backBtn;
+    private ImageView goBtn;
     private LinearLayout llPage6Operate;
 
     private int mPosition = 0;
@@ -86,7 +87,7 @@ public class UserManualActivity extends AppCompatActivity {
                 Log.i("hackill", "onPageSelected:  postion " + position);
                 mPosition = position;
 
-                mProgress.setText(position + " / 4");
+                mProgress.setText(position + "  /  4");
                 if (position == 0) {
                     page1View();
                 } else if (position == 5) {
