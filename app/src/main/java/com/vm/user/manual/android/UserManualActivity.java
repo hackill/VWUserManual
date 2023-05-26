@@ -1,6 +1,7 @@
 package com.vm.user.manual.android;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -8,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.vm.user.manual.android.event.MessageHub;
+import com.vm.user.manual.android.event.MessageReceiver;
 import com.vm.user.manual.android.frag.Page2Fragment;
 import com.vm.user.manual.android.frag.Page3Fragment;
 import com.vm.user.manual.android.frag.Page4Fragment;
@@ -74,6 +77,17 @@ public class UserManualActivity extends AppCompatActivity {
 
         page1View();
         mPosition = 0;
+
+
+        MessageHub.getInstance().addMessageReceiver(new MessageReceiver() {
+            @Override
+            public void onMessageReceive(String content) {
+                if (TextUtils.equals("Start", content)) {
+                    mPosition++;
+                    mVp.setCurrentItem(mPosition);
+                }
+            }
+        });
 
 
         mVp.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
