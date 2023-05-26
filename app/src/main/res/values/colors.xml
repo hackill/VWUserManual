@@ -12,6 +12,10 @@
     <color name="colorPrimary">#FF000000</color>
     <color name="colorPrimaryDark">#FF000000</color>
 
+
+    <color name="text_theme_1">#000000</color>
+    <color name="text_theme_2">#849EA8</color>
+    <color name="bg_theme_1">#F0F0F0</color>
     <color name="colorAccent">#666</color>
     <color name="theme_1_color">#00A7E1</color>
     <color name="theme_2_color">#001e50</color>

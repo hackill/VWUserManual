@@ -8,22 +8,15 @@
         android:label="@string/app_out_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
-
-        </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".GuideActivity" />
-        <activity android:name=".guide.CarGuideActivity" />
-
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".UserManualActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
     </application>
