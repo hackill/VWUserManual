@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_out_name">电子手册</string>
+    <string name="app_out_name">Hello app</string>
 
     <string name="welcome_guide">Welcome to the quick \n operation guidance!</string>
     <string name="welcome_guide_detail">Let’s take a quick look at the basic \n operation of the information system.</string>

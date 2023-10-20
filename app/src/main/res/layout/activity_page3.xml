@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="horizontal">
 
     <LinearLayout
@@ -15,18 +15,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:text="欢迎来到快捷操作指导"
+            android:text="系统静音：短按电源键约1s"
             android:textColor="#000000"
-            android:textSize="50dp" />
+            android:textSize="40dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="11dp"
-            android:text="一起了解那些高能实用但鲜为人知\n的快捷操作吧!"
+            android:layout_marginLeft="30dp"
+            android:text="系统待机：长按电源键约3s"
             android:textColor="#000000"
-            android:textSize="34dp" />
+            android:textSize="40dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="系统重启：长按电源键约10s"
+            android:textColor="#000000"
+            android:textSize="40dp" />
 
     </LinearLayout>
 
@@ -38,19 +45,5 @@
         android:layout_marginRight="30dp"
         android:layout_toRightOf="@+id/abc"
         android:src="@drawable/pic_page_1" />
-
-
-    <Button
-        android:id="@+id/btn_start_now"
-        android:layout_width="650dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/btn_bg"
-        android:text="现在开始"
-        android:textColor="#000000"
-        android:textSize="45dp" />
-
 
 </RelativeLayout>
