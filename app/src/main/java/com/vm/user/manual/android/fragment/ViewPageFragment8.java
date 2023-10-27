@@ -15,14 +15,14 @@ import androidx.fragment.app.Fragment;
  * @author hackill
  * @date 2023/10/27
  */
-public class ViewPageFragment3 extends Fragment {
+public class ViewPageFragment8 extends Fragment {
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = View.inflate(inflater.getContext(), R.layout.frag_view_3, null);
+        View view = View.inflate(inflater.getContext(), R.layout.frag_view_8, null);
         return view;
     }
 
