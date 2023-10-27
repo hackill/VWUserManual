@@ -34,7 +34,7 @@
         android:layout_width="600dp"
         android:layout_height="600dp"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginRight="30dp"
         android:layout_toRightOf="@+id/abc"
         android:src="@drawable/pic_page_1" />

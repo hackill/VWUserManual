@@ -22,11 +22,8 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
-        <activity android:name=".Page2Activity" />
-        <activity android:name=".Page3Activity" />
 
     </application>
 
