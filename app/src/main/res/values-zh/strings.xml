@@ -13,8 +13,7 @@
     <string name="text_page2_title">Power button operation</string>
 
 
-    <string name="page1_text1">Welcome to the quick operation guide</string>
-    <string name="page1_text2">Let’s learn about those high-power and practical \n but little-known shortcuts!</string>
-    <string name="page1_text3">Start now</string>
+    <string name="page1_text1">欢迎来到快捷操作指导</string>
+    <string name="page1_text3">现在开始</string>
 
 </resources>

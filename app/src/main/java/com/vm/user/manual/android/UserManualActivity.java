@@ -1,9 +1,11 @@
 package com.vm.user.manual.android;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -20,6 +22,7 @@ import com.vm.user.manual.android.frag.Page1Fragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
@@ -38,7 +41,10 @@ public class UserManualActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_user_manual);
+
+
 
 
         mVp = findViewById(R.id.view_pager);
@@ -48,6 +54,11 @@ public class UserManualActivity extends AppCompatActivity {
         goBtn = findViewById(R.id.btn_go);
         mProgress = findViewById(R.id.text_progress);
         llPage6Operate = findViewById(R.id.ll_operate);
+
+        Button button =  findViewById(R.id.btn_end);
+
+
+
 
         findViewById(R.id.btn_end).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,7 +140,6 @@ public class UserManualActivity extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 mPosition--;
                 mVp.setCurrentItem(mPosition);
             }
@@ -196,5 +206,23 @@ public class UserManualActivity extends AppCompatActivity {
         public int getCount() {
             return 6;
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        //
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //
     }
 }

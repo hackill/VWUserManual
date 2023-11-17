@@ -2,12 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.vm.user.manual.android">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <!--icon:程序图标，显示launcher上的-->
+    <!--label:程序名称-->
+    
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_out_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
+        <!--每个页面 只要在程序中被调用，都需要配置-->
         <activity
             android:name=".UserManualActivity"
             android:exported="true">
@@ -15,12 +25,17 @@
 
         </activity>
 
+        <!--路径-->
         <activity
-            android:name=".MainActivity"
+            android:name="com.vm.user.manual.android.MainActivity"
             android:exported="true">
+
+            <!--配置启动activity-->
             <intent-filter>
+
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+                <!--举例子：打开一个网址，若有多个浏览器，会弹出选择,使用  android.intent.action.VIEW -->
             </intent-filter>
         </activity>
 
