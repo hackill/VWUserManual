@@ -3,36 +3,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F1F1F1"
+    android:background="@color/bg_theme_1"
     android:orientation="horizontal">
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
-        android:text="若车辆配置座椅加热功能，双指点击左右温区，可快速调节主副驾座椅加热档位。"
-        android:textColor="#000000"
-        android:textSize="28dp"
+        android:layout_marginStart="14dp"
+        android:textColor="@color/text_theme_1"
+        android:text="主副驾座椅加热调节：双指点击左右温区"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageview"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
-        />
+        android:textSize="26dp"
+        app:layout_constraintVertical_bias="0.2" />
 
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="点击或者滑动音量区/左右温区，可分别调节音量及主副驾温度。"
-        android:textColor="#000000"
+        android:layout_marginStart="35dp"
+        android:text="音量/温度调节:"
+        android:textColor="@color/text_theme_1"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/text1"
+        app:layout_constraintEnd_toStartOf="@+id/imageview"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:text="点击或者滑动音量/左右温区"
+        android:textColor="@color/text_theme_1"
         android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageview"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintTop_toBottomOf="@+id/imageview"
+        app:layout_constraintVertical_bias="0" />
 
 
     <ImageView
@@ -44,6 +55,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.25"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.42" />
 

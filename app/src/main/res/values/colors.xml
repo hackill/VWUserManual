@@ -20,5 +20,7 @@
     <color name="theme_1_color">#00A7E1</color>
     <color name="theme_2_color">#001e50</color>
     <color name="btn_bg_theme1">#FFFFFF</color>
+    <color name="btn_bg_theme1_border">#FFFFFF</color>
+
 
 </resources>

@@ -5,9 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.vm.user.manual.android.MainActivity;
 import com.vm.user.manual.android.R;
-import com.vm.user.manual.android.UserManualActivity;
 import com.vm.user.manual.android.event.MessageHub;
 
 import androidx.annotation.NonNull;

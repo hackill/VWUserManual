@@ -5,7 +5,9 @@
     <color name="text_theme_1">#FFFFFF</color>
     <color name="text_theme_2">#C0EDFF</color>
     <color name="theme_1_color">#ff0000</color>
-    <color name="btn_bg_theme1">#00000000</color>
+
+    <color name="btn_bg_theme1">#222222</color>
+    <color name="btn_bg_theme1_border">#777777</color>
 
 
 </resources>

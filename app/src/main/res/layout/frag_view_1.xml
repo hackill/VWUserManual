@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg_theme_1"
     android:orientation="horizontal">
 
     <!--这个是注释-->
     <LinearLayout
         android:id="@+id/abc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/middle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintWidth_percent="0.46"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:orientation="vertical">
@@ -15,44 +23,55 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxWidth="600dp"
-            android:layout_marginLeft="30dp"
-            android:text="@string/page1_text1"
-            android:textColor="#000000"
-            android:textSize="50dp" />
+            android:text="欢迎来到快捷操作指导"
+            android:textColor="@color/text_theme_1"
+            android:textSize="44dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="11dp"
-            android:text="@string/page1_text2"
-            android:textColor="#000000"
-            android:textSize="34dp" />
+            android:layout_marginTop="25dp"
+            android:text="一起了解那些高能实用但鲜为人知的快捷操作吧！"
+            android:textColor="@color/text_theme_1"
+            android:textSize="28dp" />
 
     </LinearLayout>
 
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
     <ImageView
-        android:layout_width="600dp"
-        android:layout_height="600dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/middle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38"
+        app:layout_constraintWidth_percent="0.43"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="30dp"
-        android:layout_toRightOf="@+id/abc"
         android:src="@drawable/pic_page_1" />
 
 
     <Button
         android:id="@+id/btn_start_now"
-        android:layout_width="650dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
         android:background="@drawable/btn_bg"
-        android:text="@string/page1_text3"
-        android:textColor="#000000"
-        android:textSize="45dp" />
+        android:textColor="@color/text_theme_1"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/middle"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="现在开始"
+        app:layout_constraintVertical_bias="0.95"
+        app:layout_constraintWidth_percent="0.46" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

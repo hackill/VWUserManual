@@ -1,15 +1,26 @@
 package com.vm.user.manual.android;
 
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.vm.user.manual.android.event.MessageHub;
+import com.vm.user.manual.android.event.MessageReceiver;
 import com.vm.user.manual.android.fragment.ViewPageFragment1;
 import com.vm.user.manual.android.fragment.ViewPageFragment2;
 import com.vm.user.manual.android.fragment.ViewPageFragment3;
+import com.vm.user.manual.android.fragment.ViewPageFragment4;
+import com.vm.user.manual.android.fragment.ViewPageFragment5;
+import com.vm.user.manual.android.fragment.ViewPageFragment6;
+import com.vm.user.manual.android.fragment.ViewPageFragment7;
 import com.vm.user.manual.android.fragment.ViewPageFragment8;
 
 import androidx.annotation.Nullable;
@@ -82,16 +93,23 @@ public class MainActivity extends AppCompatActivity {
         mPosition = 0;//默认是第一个页面
     }
 
-    /**
-     * 接受消息，并做出反应
-     */
-    public static void nextPage() {
-        int newPosition = mPosition + 1;
-        //告知viewpager组件 我当前的新位置
-        viewPager.setCurrentItem(newPosition);
-    }
-
     private void initListener() {
+
+
+        MessageHub.getInstance().addMessageReceiver(new MessageReceiver() {
+            @Override
+            public void onMessageReceive(String content) {
+                //若收到的消息是start ，就做翻页
+                if (TextUtils.equals("start", content)) {
+                    mPosition++;
+                    viewPager.setCurrentItem(mPosition);
+                } else if (TextUtils.equals("ignore", content)) {
+                    finish();
+                }
+            }
+        });
+
+
         //点击进入上一页 设置监听：当点击这个按钮的时候，就会回调
         mImageLeft.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -187,9 +205,34 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //调准到其他的app，同时销毁自己的app
-                viewPager.setCurrentItem(0);
                 //销毁app
                 MainActivity.this.finish();
+                try {
+                    //获取package管理对象
+                    PackageManager packageManager = MainActivity.this.getPackageManager();
+                    PackageInfo packageInfo = packageManager.getPackageInfo(getPackageName(), 0);
+                    String versionName = packageInfo.versionName;
+                    int versionCode;
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
+                        versionCode = (int) packageInfo.getLongVersionCode();
+                    } else {
+                        versionCode = packageInfo.versionCode;
+                    }
+
+                    String appPackage = "com.test.test.test1";
+
+                    Intent launchIntent = getPackageManager().getLaunchIntentForPackage(appPackage);
+                    if (launchIntent != null && versionCode >= 205) {
+                        startActivity(launchIntent); // null pointer check
+                    } else {
+                        Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=" + appPackage);
+                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(intent);
+                    }
+
+                } catch (PackageManager.NameNotFoundException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -227,6 +270,14 @@ public class MainActivity extends AppCompatActivity {
                     return new ViewPageFragment2();
                 case 2:
                     return new ViewPageFragment3();
+                case 3:
+                    return new ViewPageFragment4();
+                case 4:
+                    return new ViewPageFragment5();
+                case 5:
+                    return new ViewPageFragment6();
+                case 6:
+                    return new ViewPageFragment7();
                 case 7://当i == 7 会走到这里
                     return new ViewPageFragment8();
                 default:
